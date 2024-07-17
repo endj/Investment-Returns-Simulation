@@ -1,0 +1,98 @@
+<html>
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        .container {
+            position: absolute;
+            left: 0;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column;
+            margin: auto;
+            padding: 10px;
+            max-width: fit-content;
+            gap: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <script src="../build/bundle.js" defer></script>
+    <div class="container">
+        <div>
+            <h2>Rates</h2>
+            <div>
+                <label for="yearlyReturns">Yearly Returns:</label>
+                <div>
+                    <input id="yearlyReturns" placeholder="Yearly Returns" type="number" value="7.0"></input>
+                    <span>%</span>
+                </div>
+            </div>
+            <div>
+                <label for="inflationRate">Inflation Rate:</label>
+                <div>
+                    <input id="inflationRate" placeholder="Inflation Rate" type="number" value="2.0"></input>
+                    <span>%</span>
+                </div>
+            </div>
+            <div>
+                <label for="randomWalk">Returns Random Walk:</label>
+                <input id="randomWalk" type="checkbox"/>
+            </div>
+        </div>
+        <div>
+            <h2>Starting Capital</h2>
+            <label for="startingCapital">Starting Capital:</label>
+            <div>
+                <input id="startingCapital" type="number" value="1000"></input>
+            </div>
+
+        </div>
+        <div>
+            <h2>Purchases</h2>
+            <div>
+                <div>
+                    <span>Every:</span>
+                    <div>
+                        <input id="period" type="number"  min="0" value="0">
+                        <select id="periodType" name="period">
+                            <option value="daily" selected>days</option>
+                            <option value="monthly">months</option>
+                            <option value="yearly">years</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <label for="purchaseAmount">Purchase Amount:</label>
+                    <div>
+                        <input id="purchaseAmount" type="number" min="0" value="0">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Date range</h2>
+            <label for="start">Start date:</label>
+            <div>
+                <input type="date" id="start" name="sim-start" />
+            </div>
+            <label for="end">End date:</label>
+            <div>
+                <input type="date" id="end" name="sim-end" />
+            </div>
+        </div>
+            <pre id="errorMessage" hidden>
+
+            </pre>
+        <div>
+            <button id="runSimulation">Run Simulation</button>
+        </div>
+    </div>
+</body>
+</html>
